@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block metainfo %}
+<title>Home</title>
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block conteudo %}
+<div id="indexcontent">
+	<div id="c_inicio">
+		<div id="boas">
+			<p id="p1_boas">Tempero da Fe</p>
+			<p id="p2_boas">Restaurante de pratos nacionais, referência em atendimento no coração de São Paulo.</p>
+			<p id="p3_boas">Venha conhecer!</p>
+		</div>
+		<div id="fachada"><img id="fachadaimg" src="/static/img/fachada.jpg" alt="fachada"></div>
+	</div>
+	<div id="c_sobre">
+		<div id="t_sobre">
+			<h2>Sobre o Tempero da Fe</h2>
+			<p>Aqui, no Tempero da Fe, valorizamos as relações humanas e as histórias de vida em torno da cozinha. Gostamos de resgatar o sabor de uma viagem.<br>É na mesa que reunimos amigos e família, comemoramos nossas conquistas, nascimento de pessoas queridas, encontros, chegadas e despedidas.</p>
+		</div>
+		<div id="i_sobre"><img src="/static/img/saco-de-batatas.jpg" alt="Batatas"></div>	
+	</div>
+	<div id="c_produtos">
+		<div id="t_produtos">
+			<h2>Delivery</h2>
+			<p>Você pode pedir em casa nossos clássicos, como Spaghetti Tradicional, Pastas Artesanais, saladas fresquinhas, pratos saudáveis que são a cara de nossas mesas vegetarianas.<br>Carnes e frutos do mar assados no forno à lenha e também opções básicas e com amor, como um frango com legumes grelhados ou purê de batatas, perfeito para o dia a dia.</p>
+		</div>
+		<div id="g_produtos">
+			<img src="/static/img/espaguete.jpg" alt="Espaguette Tradicional">
+			<img src="/static/img/Pasta-artesanal.jpg" alt="Pasta Artesanal">
+			<img src="/static/img/carne-com-cerveja.jpg" alt="Carne com Cerveja">
+			<img src="/static/img/tomahawk.jpg" alt="Tomahawk">
+
+			<img src="/static/img/camarao-frito-com-alho.jpg" alt="Camarão com Alho">
+			<img src="/static/img/salmao-grelhado.jpg" alt="Salmão Grelhado">
+			<img src="/static/img/salada-mista.jpg" alt="Salada mista">
+			<img src="/static/img/legumes-gergilim.jpg" alt="Salada de Legumes com Gergelim">
+		</div>
+		<button id="delivery">Faça seu Pedido</button>
+	</div>
+</div>
+{% endblock %}

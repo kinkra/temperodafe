@@ -1,0 +1,66 @@
+button,input,select,textarea{
+font-family: inherit
+}
+h1{
+font-size: 1.5em;
+}
+body{
+    background-color: rgb(242, 250, 250);
+}
+label,legend{
+color: #4a4a4a;
+font-weight: bold;
+font-size: 0.75em;
+}
+input{
+min-height: 1.3em;
+}
+button{
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+padding-left: 2.5em;
+padding-right: 2.5em;
+font-weight: bold;
+background-color: lightcyan;
+border-radius: 12px;
+}
+button:hover{
+background-color: lightgray;
+}
+#Formulario{
+background-color: white;
+font-family: Verdana;
+margin:  auto;
+box-sizing: border-box;
+border:1px solid black;
+max-width: 540px;
+padding: 10px;
+}
+#Formulario h1,#Botoes{
+text-align: center;
+}
+#Limpar{
+border: 1px solid darkslategray;
+}
+#Enviar{
+border: 1px solid darkslateblue
+}
+#Nome,#Email,#Telefone,#Assunto,#Mensagem{
+display: block;
+width: 100%;
+box-sizing: border-box;
+} 
+#Telefone::-webkit-inner-spin-button,#Telefone::-webkit-outer-spin-button{
+-webkit-appearance: none;
+
+}
+#Nome,#Email,#Telefone,#Assunto,#Mensagem,fieldset{
+margin-bottom: 12px;
+}
+#backg{
+background-image: url("/static/img/topview-mesa.jpg");
+background-size: cover;
+background-position: center;
+padding-bottom: 245px;
+padding-top: 50px;
+}

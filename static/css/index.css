@@ -1,0 +1,126 @@
+
+body,p{margin: 0;}
+
+
+#c_inicio
+    {background-position: center;
+    background-size: cover;
+    background-image: url("/static/img/a2.jpg");
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 550px;}
+
+    #boas
+        {color: white;
+        background-color: #8f694991;
+        height: 350px;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 30px;
+        border-radius: 3px;}
+        #p1_boas
+            {font-family: 'Fredericka the Great', cursive, sans-serif;
+            font-size: 60px;
+            margin-bottom: 30px;}
+        #p2_boas,#p3_boas
+            {font-family: 'Lato', sans-serif;
+            font-size: 22px;
+            line-height: 1.8;
+            letter-spacing: .5px;
+            font-style: normal;}
+        #p3_boas
+			{margin-top: 30px;
+            font-size: 30px;}
+
+    #fachada
+        {height: 325px;
+        width: 50%;
+        box-shadow: 5px 0px 10px rgb(80, 54, 5);}
+		#fachada>img
+			{width: 100%;
+			height: 100%;
+			object-fit: cover;
+			overflow: hidden;}
+
+
+#c_sobre
+    {padding: 100px 50px 100px 50px;
+    display: flex;
+    align-items:center;
+    text-align: center;
+}
+
+    #t_sobre
+        {height: 300px;
+        width: 570px;
+        margin-right: 30px;}
+		#t_sobre>h2
+			{font-family: 'Lato', sans-serif;
+			font-size: 35px;
+			font-weight: 700;
+			color: rgb(70, 70, 70);}
+		#t_sobre>p
+			{font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			color: rgb(109, 109, 109);
+			letter-spacing: .6px;
+			line-height: 1.8;}
+
+	#i_sobre>img{width: 570px;}
+
+
+#c_produtos
+	{background-color: rgb(212, 211, 211);
+	padding: 50px;
+	text-align: center;}
+
+    #t_produtos
+        {font-family: 'Lato', sans-serif;
+        text-align: justify-all;}
+		#t_produtos>h2
+			{font-size: 40px;
+			color: rgb(70, 70, 70);}
+		#t_produtos>p
+			{margin-left: 250px;
+			margin-bottom: 50px;
+			max-width: 700px;
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: .6px;
+			line-height: 1.8;}
+
+    #g_produtos
+        {display: grid;
+        grid-template-columns: repeat(4,auto);
+        gap: 10px;
+        margin-bottom: 30px;}
+        #g_produtos>img
+            {width: 280px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 0 10px black;}
+			
+    #delivery
+        {cursor: pointer;
+        text-decoration: none;
+        width: 200px;
+        height: 30px;
+        line-height: 15px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: white;
+        background-color: rgb(90, 75, 46);
+        border-radius: 7px;
+        border-style: none;
+        transition: 0.5s;}
+    #delivery:hover
+        {transform: scale(1.2);
+        background-color: rgb(145, 108, 34);
+        box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block metainfo %}
+<title>Confirmação</title>
+<link rel="stylesheet" href="/static/css/confirmacao.css">
+{% endblock %}
+
+{% block conteudo %}
+<div id="verify">
+    <div id="h_verify">Verifique seu email</div>
+    <div id="t_verify">
+        <p>Obrigado <span class="dados">{{nome}}</span> por fazer parte da nossa casa!</p>
+        <p>Verifique seu email: <span class="dados">{{email}}</span> clicando abaixo.</p>
+        <button>Sim, este é meu email</button>
+    </div>
+</div>
+{% endblock %}
