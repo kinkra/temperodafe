@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block metainfo %}
+<title>Contato</title>
+<link rel="stylesheet" href="/static/css/contato.css">
+{% endblock %}
+
+{% block conteudo %}
+<div id="backg">
+  <div id="Formulario">
+    <h1>Fale Conosoco</h1>
+    <form method="post" action="/confirmacao">
+      <label for="Nome">Nome:</label>
+      <input type="text" id="Nome" name="nome" required>
+      <label for="Email">e-mail:</label>
+      <input type="email" id="Email" name="email" required>
+      <label for="Telefone">Telefone:</label>
+      <input type="number" id="Telefone" name="tel" required>
+      <label for="Assunto">Assunto:</label>
+      <select name="assunto" id="Assunto" required>
+        <option selected>Selecione uma opção</option>
+        <option value="1">Atendimento ao Cliente</option>
+        <option value="2">Secretaria de Graduação</option>
+        <option value="3">Secretaria de Pós Graduação</option>
+        <option value="4">Financeiro</option>
+        <option value="5">Ouvidoria</option>
+      </select>
+      <label for="Mensagem">Mensagem</label>
+      <textarea name="mensagem" id="Mensagem" rows="4" minlength="50" maxlength="500" placeholder="Digite aqui sua mensagem" required></textarea>
+      <fieldset>
+        <legend>Como nos conheceu?</legend>
+        <input type="radio" name="conheceu" id="Google" value="1">
+        <label for="Google">Google Ads</label>
+        <input type="radio" name="conheceu" id="Insta" value="2">
+        <label for="Insta">Insta</label>
+        <input type="radio" name="conheceu" id="Podcasts" value="3">
+        <label for="Podcasts">Podcasts</label>
+        <input type="radio" name="conheceu" id="TV" value="4">
+        <label for="TV">TV</label>
+        <input type="radio" name="conheceu" id="Amigos" value="5">
+        <label for="Amigos">Amigos</label>
+        <input type="radio" name="conheceu" id="Outros" value="6">
+        <label for="Outros">Outros</label>
+      </fieldset>
+      <div id="Botoes">
+        <button type="reset" id="Limpar">Limpar</button>
+        <button type="submit" id="Enviar">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

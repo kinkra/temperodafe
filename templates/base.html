@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css">
+    {% block metainfo %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="i_header"><img src="/static/img/campfire.png" alt="Logo"></div>
+
+        <!-- ---------------------------- AC3 ------------------------------------ -->
+        <div class = 'buttons-h'></div><a href="/">Home</a></div>
+        <div class = 'buttons-h'></div><a href="/contato">Contato</a></div>
+
+        <!-- ----------------------------- AC4 ----------------------------------- -->
+        <div class = 'buttons-h'></div><a href="/cadastro">Cadastro</a></div>
+        {% if logado %}
+        <div class = 'buttons-h'></div><a href="/area_logada">Minha Area</a></div>
+        <div class = 'buttons-h'></div><a href="/logout">Sair</a></div>
+        {% else %}
+        <div class = 'buttons-h'></div><a href="/login">Login</a></div>
+        {% endif %}
+    </header>
+    <div id="mainc">{%block conteudo%}{%endblock%}</div>
+</body>
+</html>
