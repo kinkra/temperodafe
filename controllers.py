@@ -1,6 +1,7 @@
+from app import app
 from flask import render_template, request, session, redirect, url_for, make_response
 from uuid import uuid1
-from app import app
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 # ------------------------------------------------ AC3 --------------------------------------------- #
@@ -31,41 +32,46 @@ def cadastro():
 
     if request.method == 'GET':
         return render_template('cadastro.html')
-    
+
     elif request.method == 'POST':
         email = request.form.get('email')
         nome = request.form.get('nome')
-        senha = request.form.get('senha')
+        senha = generate_password_hash((request.form.get('senha')))
 
-		#verifica se já é cadastrado
+        # verifica se já é cadastrado
         if email not in session['usuarios']:
-            session['usuarios'][email] = {'nome': nome, 'email': email, 'senha': senha}
-            print(session)
+            session['usuarios'][email] = {
+                'nome': nome, 'email': email, 'senha': senha}
+            senha = None
+            print(session, senha)
             return redirect(url_for('login'))
-        else:return redirect(url_for('cadastro'))
+        else:
+            return redirect(url_for('cadastro'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        
-        #verifica se já está logado e redireciona caso positivo
+
+        # verifica se já está logado e redireciona caso positivo
         if request.cookies.get('id_sessao') in session['sessoes'].keys():
-            return redirect(url_for('area_logada'))     
-        else:return render_template('login.html')
-        
+            return redirect(url_for('area_logada'))
+        else:
+            return render_template('login.html')
+
     elif request.method == 'POST':
         email = request.form.get('email')
         senha = request.form.get('senha')
 
-		#verifica integridade do login e cria sessao 
-        if email not in session['usuarios'].keys() or senha != session['usuarios'][email]['senha']:
+        # verifica integridade do login e cria sessao
+        if email not in session['usuarios'].keys() or not check_password_hash(session['usuarios'][email]['senha'], senha):
             return redirect(url_for('login'))
-        
+
         else:
+            senha = None
             id_sessao = str(uuid1())
             session['sessoes'][id_sessao] = email
-            print(session)  
+            print(session, senha)
             resp = make_response(redirect(url_for('area_logada')))
             resp.set_cookie('id_sessao', id_sessao)
             return resp
@@ -75,7 +81,7 @@ def login():
 def logout():
     id_sessao = request.cookies.get('id_sessao')
     session['sessoes'].pop(id_sessao, None)
-    print(session)  
+    print(session)
     resp = make_response(redirect(url_for('login')))
     resp.delete_cookie('id_sessao')
     return resp
